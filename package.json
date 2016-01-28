@@ -4,7 +4,7 @@
   "description": "A starter theme all gulpified and sassy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm install && bower install"
   },
   "repository": {
     "type": "git",
