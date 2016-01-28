@@ -1,0 +1,23 @@
+{
+  "name": "base",
+  "description": "A starter theme all gulpified and sassy",
+  "main": "index.js",
+  "authors": [
+    "Rob Skidmore"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sebodev/_s",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.6",
+    "neat": "~1.7.2",
+    "meyer-reset": "*"
+  }
+}
