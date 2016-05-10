@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
+var cmq = require('gulp-group-css-media-queries');
 var plugins = require( 'gulp-load-plugins' )({ camelize: true });
 
-var url = 'gulp.dev'
+var url = 'framework.dev'
 
 var dir = {
     sass: './sass/',
@@ -18,7 +19,7 @@ gulp.task('styles', function() {
     })
     .pipe(plugins.plumber())
     .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
-    .pipe(plugins.combineMediaQueries())
+    .pipe(cmq())
     .pipe(plugins.csscomb())
     .pipe(plugins.plumber.stop())
     .pipe(gulp.dest('./'))
@@ -39,21 +40,10 @@ gulp.task('scripts-lint', function() {
     .pipe(plugins.eslint.format());
 });
 
-gulp.task('scripts-admin', function() {
-    return gulp.src([
-        dir.js + 'customizer.js'
-    ])
-    .pipe(plugins.concat('admin.js'))
-    .pipe(gulp.dest(dir.js))
-    .pipe(plugins.rename({suffix: '.min'}))
-    .pipe(plugins.uglify())
-    .pipe(gulp.dest(dir.js));
-});
-
 gulp.task('scripts-main', function() {
     return gulp.src([
-        dir.js + 'navigation.js',
-        dir.js + 'skip-link-focus-fix.js'
+        dir.js + 'src/navigation.js',
+        dir.js + 'src/skip-link-focus-fix.js'
     ])
     .pipe(plugins.concat('main.js'))
     .pipe(gulp.dest(dir.js))

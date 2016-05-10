@@ -1,5 +1,5 @@
 /*!
-Theme Name: Base
+Theme Name: SnapSite
 Theme URI: https://github.com/sebodev/_s
 Author: Sebo Dev
 Author URI: http://sebodev.com/
@@ -508,7 +508,8 @@ html {
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
 }
 
 blockquote,
@@ -558,8 +559,10 @@ dd {
 }
 
 img {
-	max-width: 100%; /* Adhere to container width. */
-	height: auto; /* Make sure images are scaled correctly. */
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	height: auto;
+	/* Adhere to container width. */
 }
 
 table {
@@ -810,7 +813,7 @@ a:active {
 .screen-reader-text:focus {
 	display: block;
 	clip: auto !important;
-	z-index: 100000; /* Above WP toolbar. */
+	z-index: 100000;
 	top: 5px;
 	left: 5px;
 	width: auto;
@@ -825,35 +828,13 @@ a:active {
 	font-weight: bold;
 	line-height: normal;
 	text-decoration: none;
+	/* Above WP toolbar. */
 }
 
 /* Do not show the outline on the skip link target. */
 
 #content[tabindex="-1"]:focus {
 	outline: 0;
-}
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
-
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
-
-.aligncenter {
-	display: block;
-	clear: both;
-	margin-right: auto;
-	margin-left: auto;
 }
 
 /*--------------------------------------------------------------
@@ -891,7 +872,8 @@ a:active {
 --------------------------------------------------------------*/
 
 .widget {
-	margin: 0 0 1.5em; /* Make sure select elements fit in widgets. */
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
 }
 
 .widget select {
@@ -953,24 +935,6 @@ a:active {
 }
 
 .bypostauthor {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-
-.infinity-end.neverending .site-footer {
 	display: block;
 }
 

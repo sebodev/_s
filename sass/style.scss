@@ -1,5 +1,5 @@
 /*!
-Theme Name: Base
+Theme Name: SnapSite
 Theme URI: https://github.com/sebodev/_s
 Author: Sebo Dev
 Author URI: http://sebodev.com/
@@ -80,11 +80,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "modules/accessibility";
 
 /*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
-
-/*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
 @import "modules/clearings";
@@ -98,11 +93,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Content
 --------------------------------------------------------------*/
 @import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-@import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
 # Media

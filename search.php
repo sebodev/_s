@@ -21,16 +21,29 @@ get_header(); ?>
 
 			<?php
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post(); ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header">
+					<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-			endwhile;
+					<?php if ( 'post' === get_post_type() ) : ?>
+					<div class="entry-meta">
+						<?php _s_posted_on(); ?>
+					</div><!-- .entry-meta -->
+					<?php endif; ?>
+				</header><!-- .entry-header -->
+
+				<div class="entry-summary">
+					<?php the_excerpt(); ?>
+				</div><!-- .entry-summary -->
+
+				<footer class="entry-footer">
+					<?php _s_entry_footer(); ?>
+				</footer><!-- .entry-footer -->
+			</article><!-- #post-## -->
+
+			<?php endwhile;
 
 			the_posts_navigation();
 
