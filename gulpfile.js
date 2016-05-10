@@ -13,10 +13,8 @@ var dir = {
 }
 
 gulp.task('styles', function() {
-    return plugins.sass(dir.sass + 'style.scss', {
-        style: 'expanded',
-        loadPath: dir.bower
-    })
+    return gulp.src(dir.sass + 'style.scss')
+    .pipe(plugins.sass({includePaths: dir.bower}).on('error', plugins.sass.logError))
     .pipe(plugins.plumber())
     .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
     .pipe(cmq())
