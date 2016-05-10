@@ -13,7 +13,7 @@ var dir = {
 }
 
 gulp.task('styles', function() {
-    return plugins.rubySass(dir.sass + 'style.scss', {
+    return plugins.sass(dir.sass + 'style.scss', {
         style: 'expanded',
         loadPath: dir.bower
     })
